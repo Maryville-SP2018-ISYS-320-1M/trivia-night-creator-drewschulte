@@ -1,0 +1,11 @@
+/*
+//Pseudocode
+
+Collect 10 files from everyone
+input 10 files into folder that is used to hold all files used for this project
+put all 10 files together 
+have program read answers in random order 1 through 100
+after each answer is read have it display the answer
+keep score of each team while game is being played 
+
+/*
