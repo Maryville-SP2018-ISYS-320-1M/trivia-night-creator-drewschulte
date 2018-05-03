@@ -46,7 +46,9 @@ public class SlideShowBuilder {
 	public void buildSlideShow(String[] categories, String[] questions, String[] answers, String fileName) {
 		XMLSlideShow ppt = new XMLSlideShow();
 		XSLFSlideMaster defaultMaster = ppt.getSlideMasters().get(0);
-		
+		for (int i = 0; i < 10; i++) {
+			categories[i] = categories[i].substring(3, categories[i].length() - ".txt".length());
+		}
 		for (int round = 0; round < 10; round++) {
 			
 			makeRoundSlide(ppt, defaultMaster, "Round " + (round+1));
