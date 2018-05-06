@@ -13,17 +13,18 @@ public class QuestionsManager {
 	public ArrayList<String> questions = new ArrayList<String>();;
 	public ArrayList<String> answers = new ArrayList<String>();;
 	int totalQandA = 0;
+
 	public QuestionsManager(String categoryFolder) {
 		File fldr = new File(categoryFolder);
 		String[] files = fldr.list();
-		
-		Collections.addAll(categories,files);
+
+		Collections.addAll(categories, files);
 		Collections.sort(categories);
 		for (String fileName : categories) {
 			File f = new File(categoryFolder + "/" + fileName);
 			try {
 				Scanner fs = new Scanner(f);
-				while(fs.hasNextLine()) { // Assume Q, A, Blank Line triplets 
+				while (fs.hasNextLine()) { // Assume Q, A, Blank Line triplets
 					questions.add(fs.nextLine());
 					answers.add(fs.nextLine());
 					fs.nextLine();
@@ -34,18 +35,18 @@ public class QuestionsManager {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 		}
 	}
-	
+
 	public String[] getCategories() {
 		return categories.toArray(new String[categories.size()]);
 	}
-	
+
 	public String[] getQuestions() {
 		return questions.toArray(new String[questions.size()]);
 	}
-	
+
 	public String[] getAnswers() {
 		return answers.toArray(new String[answers.size()]);
 	}
